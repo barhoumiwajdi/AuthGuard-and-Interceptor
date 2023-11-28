@@ -8,7 +8,6 @@ import {
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-
 import { Injectable } from '@angular/core';
 import { UtilisService } from '../_Services/utilis.service';
 
@@ -24,7 +23,6 @@ export class AuthInterceptor implements HttpInterceptor {
         if (req.headers.get('No-Auth') === 'True') {
             return next.handle(req.clone());
         }
-
         const token = this.userAuthService.getToken();
 
         req = this.addToken(req, token);
@@ -43,7 +41,6 @@ export class AuthInterceptor implements HttpInterceptor {
             )
         );
     }
-
 
     private addToken(request: HttpRequest<any>, token: string) {
         return request.clone(

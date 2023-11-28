@@ -1,0 +1,69 @@
+<nav class="navbar  navbar-expand-lg navbar-absolute navbar-transparent navbar-dark shadow-none">
+    <div class="container  border border-raduis mt-5">
+        <a class="navbar-brand text-white" href="javascript:;">Hotel Management </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-header-3"
+            aria-controls="navbar-header-3" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-header-3">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" *ngIf="authservice.roleMatch(['ADMIN'])" aria-current="page"
+                        [routerLink]="['/Admin']">Admin Dashbord</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" *ngIf="authservice.roleMatch(['MANAGER'])" aria-current="page"
+                        routerLink="/Manager">Manager Dashbord</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" *ngIf="authservice.roleMatch(['USER'])" aria-current="page"
+                        routerLink="/User">User Dashbord</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="javascript:;">
+                        About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;">
+                        Contact Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+
+            </ul>
+            <button *ngIf="! loggedin()" type="button" class="btn btn-outline-light m-2"
+                routerLink="/Login">Login</button>
+            <button *ngIf="loggedin()" type="button" (click)="logout()" class="m-2 btn btn-outline-dark btn-rounded"
+                routerLink="#">Logout</button>
+            <button *ngIf="! loggedin()" type=" button" class="btn btn-outline-light m-2"
+                routerLink="/Register">Register</button>
+
+            <!-- Avatar -->
+
+            <a *ngIf="loggedin()" class="nav-link d-flex align-items-center" [routerLink]="['/Profile/' , id]"
+                role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#e63472" class="bi bi-person"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                </svg>
+            </a>
+
+        </div>
+    </div>
+
+</nav>

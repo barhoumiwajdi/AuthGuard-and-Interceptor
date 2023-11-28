@@ -22,7 +22,12 @@ export class UtilisService {
   public getToken(): string {
     return localStorage.getItem('jwtToken') || '';
   }
-
+  public setid(id: string) {
+    localStorage.setItem('id', id)
+  }
+  public getid() {
+    return localStorage.getItem('id') || ''
+  }
   public clear() {
     localStorage.clear();
   }

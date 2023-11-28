@@ -18,11 +18,7 @@ export class AuthService {
     })
   }
 
-  public forUser() {
-    return this.HttpClient.get(this.baseurl + '/user/users', {
-      responseType: 'text',
-    });
-  }
+
   public roleMatch(allowedRoles: any): void | boolean {
     try {
       let isMatch = false;

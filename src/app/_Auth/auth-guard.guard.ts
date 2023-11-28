@@ -8,13 +8,8 @@ import { AuthService } from '../_Services/auth.service';
   providedIn: 'root'
 })
 export class AuthGuardGuard implements CanActivate {
-
   constructor(
-    private userAuthService: UtilisService,
-    private router: Router,
-    private userService: AuthService
-  ) { }
-
+    private userAuthService: UtilisService, private router: Router, private userService: AuthService) { }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -25,20 +20,18 @@ export class AuthGuardGuard implements CanActivate {
     | UrlTree {
     if (this.userAuthService.getToken() !== null) {
       const role = route.data['roles'] as Array<string>;
-
       if (role) {
         const match = this.userService.roleMatch(role);
 
         if (match) {
           return true;
         } else {
-          this.router.navigate(['/forbidden']);
+          this.router.navigate(['/Login']);
           return false;
         }
       }
     }
-
-    this.router.navigate(['/login']);
+    this.router.navigate(['/Login']);
     return false;
   }
 

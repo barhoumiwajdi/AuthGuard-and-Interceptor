@@ -9,7 +9,7 @@ import { UserComponent } from './Template/user/user.component';
 import { ManagerComponent } from './Template/manager/manager.component';
 import { LoginComponent } from './Template/login/login.component';
 import { RegisterComponent } from './Template/register/register.component';
-import { HeaderComponent } from './Layout/header/header.component';
+
 import { FooterComponent } from './Layout/footer/footer.component';
 import { ForbidenAccessComponent } from './Layout/forbiden-access/forbiden-access.component';
 import { RouterModule } from '@angular/router';
@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuardGuard } from './_Auth/auth-guard.guard';
 import { AuthInterceptor } from './_Auth/Auth.Interceptor';
 import { AuthService } from './_Services/auth.service';
+import { HeaderComponent } from './Template/header/header.component';
+import { ProfileComponent } from './Template/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { AuthService } from './_Services/auth.service';
     ManagerComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent,
+
     FooterComponent,
     ForbidenAccessComponent,
+    HeaderComponent,
+    ProfileComponent,
 
 
   ],

@@ -11,6 +11,7 @@ import { UtilisService } from 'src/app/_Services/utilis.service';
 })
 export class LoginComponent implements OnInit {
   constructor(private AuthServices: AuthService, private utilisService: UtilisService, private router: Router) { }
+  display = false
   ngOnInit(): void {
 
   }
@@ -26,6 +27,8 @@ export class LoginComponent implements OnInit {
         console.log(res.role)
         this.utilisService.setRoles(res.role)
         this.utilisService.setToken(res.token)
+        this.utilisService.setid(res.id)
+        this.display = true
         const role = res.role
         if (role == "ADMIN") {
           this.router.navigate(['/Admin'])

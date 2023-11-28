@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/_Services/auth.service';
+import { UserService } from 'src/app/_Services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -9,21 +10,24 @@ import { AuthService } from 'src/app/_Services/auth.service';
 export class UserComponent implements OnInit {
   ngOnInit(): void {
 
-    this.forUser()
-  }
-  message: any;
-  constructor(private userService: AuthService) { }
-
-
-  forUser() {
     this.userService.forUser().subscribe(
       (response) => {
-        console.log(response);
+        console.log(response)
         this.message = response;
+        this.display = false
+
       },
       (error) => {
+
         console.log(error);
       }
     );
+
   }
+  message: any;
+
+  constructor(private userService: UserService) { }
+  display = true
+
+
 }
