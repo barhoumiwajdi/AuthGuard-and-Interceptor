@@ -2,9 +2,9 @@
 <header>
 
     <div class="page-header min-vh-100" loading="lazy">
-        <app-header></app-header>
+
         <span class="mask bg-gradient-dark opacity-4"></span>
-        <div class="container mt-5">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-sm-9 mt-5 text-center mx-auto">
                     <h1 class="text-white mb-4">Work with an amazing</h1>
@@ -36,5 +36,50 @@
             </div>
         </div>
     </div>
+
 </header>
+<app-about-us></app-about-us>
+
 <!-- -------- END HEADER 3 w/ image on background ------- -->
+<!-- <div class="container">
+    <div class="row d-flex justify-content-center align-items-center card">
+        <div class="col-12">
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource">
+
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="weight">
+                        <th mat-header-cell *matHeaderCellDef> Weight </th>
+                        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="symbol">
+                        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                    aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<app-diagram></app-diagram>

@@ -1,8 +1,14 @@
 .page-header {
-    background-image: url("../../images/bg0.jpg");
+    background-image: url('../../images/bg0.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 
 
+
+}
+
+table {
+    width: 100%;
+    background-color: #EEE6D8;
 }

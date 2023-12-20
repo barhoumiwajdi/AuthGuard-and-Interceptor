@@ -12,7 +12,7 @@ import { ProfileComponent } from './Template/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'Admin', component: AdminComponent },
+  { path: 'Admin', component: AdminComponent, canActivate: [AuthGuardGuard], data: { roles: ['ADMIN'] } },
   { path: 'User', component: UserComponent, canActivate: [AuthGuardGuard], data: { roles: ['USER'] } },
   { path: 'Manager', component: ManagerComponent, canActivate: [AuthGuardGuard], data: { roles: ['MANAGER'] } },
   { path: 'Profile/:id', component: ProfileComponent },
